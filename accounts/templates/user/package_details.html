@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Package Details</title>
+</head>
+<body>
+<div>
+    <h2>Travello tours</h2>
+
+    <a href="{% url 'return_to_user_dashboard' %}"><button>Go back </button></a>
+
+</div>
+
+    <h1>{{ package.package_title }}</h1>
+    <img src="{{ package.place_image }}" width="350">
+    <p>Destination: {{ package.destination }}</p>
+    <p>Price: ₹{{ package.price }}</p>
+    <p>{{ package.description }}</p>
+    <p>Duration: {{ package.duration }} days</p>
+    <p>Start Date: {{ package.start_date }}</p>
+    <p>End Date: {{ package.end_date }}</p>
+
+    <a href="{% url 'confirm_payment' package.id %}"><button>Confirm & Pay</button></a>
+
+
+
+</body>
+</html>

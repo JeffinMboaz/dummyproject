@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Edit Package - </title>
+</head>
+<body>
+
+
+ <h2>Edit Package</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        Title: <input type="text" name="package_title" value="{{ package.package_title }}"><br>
+        Destination: <input type="text" name="destination" value="{{ package.destination }}"><br>
+        Price: <input type="text" name="price" value="{{ package.price }}"><br>
+        Description: <textarea name="description">{{ package.description }}</textarea><br>
+        Duration: <input type="number" name="duration" value="{{ package.duration }}"><br>
+        <button type="submit">Update Package</button>
+    </form>
+
+
+</body>
+</html>

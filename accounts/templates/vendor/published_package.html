@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+publish |
+    <a href="{% url 'return_to_vendor_dashboard' %}"><button>Go back </button></a>
+
+
+ <h2>All Packages</h2>
+    {% for package in packages %}
+        <p>
+            {{ package.package_title}}, ₹{{ package.price }}
+            <a href="{% url 'edit_package' package.id %}"><button>Update</button></a> |
+
+            <a href="{% url 'delete_package' package.id %}"
+               onclick="return confirm('Are you sure you want to delete {{ package.title }}?');">
+               <button>Delete</button>
+            </a>
+        </p>
+    {% empty %}
+        <p>No packages found.</p>
+    {% endfor %}
+</body>
+</html>

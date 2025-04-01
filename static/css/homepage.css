@@ -1,0 +1,18 @@
+#Homepage styles
+ a{
+    text-decoration: none;
+    font-weight: bold;
+
+}
+.container{
+
+ display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+
+        color:navy blue;
+
+
+}

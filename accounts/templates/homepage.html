@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+
+</head>
+<body>
+
+    <div class ='container'>
+
+    <a href="{% url 'user_reg' %}">User Registration</a> |
+    <a href="{% url 'vendor_reg' %}">Vendor Registration</a> |
+    <a href="{% url 'login' %}">User Login</a> |
+    <a href="{% url 'vendor_login' %}">Vendor Login</a> |
+    <a href="{% url 'uv_login' %}">Combined User/Vendor Login</a>
+
+ </div>
+
+<div>
+ <h1>Welcome to Zion Holidays</h1>
+</div>
+</body>
+</html>

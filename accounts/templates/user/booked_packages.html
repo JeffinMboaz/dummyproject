@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Dashboard - Booked Packages</title>
+</head>
+<body>
+    <h1>User Dashboard</h1>
+    <h2>Your Booked Packages</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Package Title</th>
+                <th>Company</th>
+                <th>Vendor Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.package.package_title }}</td>
+                    <td>{{ booking.package.vendor.company }}</td>
+                    <td>{{ booking.package.vendor.phone_no }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3">You have not booked any packages yet.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <a href="{% url 'return_to_user_dashboard' %}"><button>Back to Dashboard</button></a>
+</body>
+</html>

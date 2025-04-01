@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Plan</title>
+
+    <style>
+        a{
+         text-decoration:none;
+
+        }
+        .book_btn{
+
+        border:none;
+        border-radius:5px;
+        padding:  5px 6px;
+        font-weight:900;
+        background-color:blue;
+        color:white
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+<!--use a drop down to add top package top,budget friendly-->
+        <a href="#" ><button  >Top packages</button></a>
+
+        <a href="#" ><button  >Budget<br>friendly</button></a>
+
+        <a href="{% url 'user_bookings' %}">My bookings</a>
+        <a href="{% url 'logout' %}">Logout</a>
+
+    </nav>
+</header>
+<main>
+    <section>
+
+        <div>
+             <h1>Welcome {{first_name }} {{ last_name }} to Travel Plan</h1>
+
+               <h2> Tour Packages</h2>
+
+
+            {% for package in packages %}
+            <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+                <h3>{{ package.package_title }}</h3>
+                    <a href="{% url 'package_details' package.id %}">
+                    <img src="{{ package.place_image }}" width="350">
+                   </a>
+
+                <p>Destination: {{ package.destination }}</p>
+                <p>Price: ₹{{ package.price }}</p>
+                <p>{{ package.description }}</p>
+                <p>Duration: {{ package.duration }} days</p>
+
+                <a href="{% url 'package_details' package.id %} " class="book_btn"> Book Now </a>
+
+          </div>
+             {% empty %}
+             <p>No packages available.</p>
+            {% endfor %}
+        </div>
+
+    </section>
+</main>
+
+</body>
+</html>

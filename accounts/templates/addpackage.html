@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vendor Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+
+<header>
+    <nav class="navstyle" >
+ <a href="{% url 'create_package' %} ">
+         <button>create</button></a> |
+
+    <a href="{% url 'published_package' %}" >
+        <button class="publish" >Published <br> package</button></a>
+
+        <a href="#" >
+        <button  >Status</button></a>
+
+        <a href="{% url 'vendor_logout' %}">
+          <button>Logout</button></a>
+
+    </nav>
+</header>
+
+<main>
+<section>
+    <div >
+    <h2>Welcome {{ vendor.first_name }}
+        {{ vendor.second_name }}!</h2>
+    |
+
+</div>
+</section>
+
+</main>
+
+
+<footer>
+    <div>
+          &copy; Travello Tour Managment
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>vendor-Create Tour Package</title>
+</head>
+<body>
+    <h2>Create New Tour Package</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+
+        <button type="submit">Submit for Approval</button>
+    </form>
+
+    <a href="#">Back to Dashboard</a>
+</body>
+</html>

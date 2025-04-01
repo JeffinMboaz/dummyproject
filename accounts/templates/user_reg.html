@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+</head>
+<body>
+    <h2>User Registration Form</h2>
+    <div>
+       <form  action="{% url 'user_reg' %}" method="POST">
+             {% csrf_token %}
+             {{ uform.as_p }}
+             <button type="submit">Register</button>
+             <button type="reset">Reset</button>
+       </form>
+    </div>
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color:green;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
